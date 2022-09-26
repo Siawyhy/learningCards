@@ -17,8 +17,3 @@ ____
 - v0.3.0 - Redux/toolkit (Slice)
 <<<<<<< HEAD
 - v0.3.1 - Small edits to the design [NEW](https://imgur.com/jrGwroG) ([old](https://imgur.com/Vem9TFX))
-=======
-
-
-   
->>>>>>> 9cf4b1433207334d2da5d3a9e952637e9679e637
