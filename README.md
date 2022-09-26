@@ -14,12 +14,7 @@ ____
 **PATCH NOTES:**
 - v0.1 - layout creation 
 - v0.2 - upload to a repository 
+- v0.3.0 - Redux/toolkit (Slice)
 
-added:
 
-+card table 
-+basic functionality of cards
-+like button animation
-
-		
    
