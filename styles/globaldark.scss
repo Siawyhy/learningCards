@@ -8,8 +8,40 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: rgb(217 167 215);
+    
+    // animation: background-tv 10s infinite ;
+    background: rgb(22, 22, 22);
   }
+
+  @keyframes background-tv {
+    from {
+      background: rgb(217, 167, 167);
+    }
+
+    20% {
+      background: rgb(217, 217, 167);
+    }
+
+    40% {
+      background: rgb(167, 217, 167);
+    }
+    
+    60% {
+      background: rgb(189, 167, 217);
+  }
+
+    80% {
+      background: rgb(167, 167, 217);
+    }
+    
+  //   100% {
+  //     background: rgb(217, 167, 217);
+  // }
+
+    to {
+      background: rgb(217, 167, 167);
+}
+}
   
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -91,7 +123,7 @@ h1 {
 }
 
 .card-body{
-  height: 320px;
+  height: 315px;
   position: relative;
   width: auto;
   border: solid 4px;
@@ -220,7 +252,7 @@ h1 {
   }
   body {
     color: white;
-    background: rgb(217 167 215);
+    background: rgb(22, 22, 22);
   }
 }
 
