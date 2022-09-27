@@ -34,3 +34,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# mine
+package-lock.json
+store/cardsSlice.js
+site/
+assets/

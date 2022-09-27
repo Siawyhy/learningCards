@@ -8,20 +8,20 @@
         },
         {
             "id":2,
-            "en":"blade", 
-            "ru":"меч", 
+            "en":"Blade", 
+            "ru":"Меч", 
             "like": true
         },
         {
             "id":3, 
             "en":"Failure", 
-            "ru":"сбой", 
+            "ru":"Сбой", 
             "like":false
         },
         {
             "id":4, 
             "en":"Folder", 
-            "ru":"папка", 
+            "ru":"Папка", 
             "like":false
         },
         {
