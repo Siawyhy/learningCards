@@ -3,12 +3,23 @@ import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
 export const apiSlice = createApi({
     reducerPath: 'api',
     baseQuery: fetchBaseQuery({baseUrl: 'http://localhost:3001'}),
+    tagTypes: ['Card'],
     endpoints: builder => ({
         getCards: builder.query({
-            query: () => '/cards'       
-        })
+            query: () => '/cards',
+            providesTags: ['Card'] }),
+        deleteCard: builder.mutation ({
+            query: id => ({
+                url: `/cards/${id}`,
+                method: 'DELETE'}),
+            invalidatesTags: ['Card']}),
+        addCard: builder.mutation({
+            query: card => ({
+                url: '/cards',
+                method: 'POST',
+                body: card}),
+            invalidatesTags: ['Card']})
     })
 }) 
 
-export const {useGetCardsQuery} = apiSlice;
-//dsad
+export const {useGetCardsQuery, useDeleteCardMutation, useAddCardMutation} = apiSlice;

@@ -8,9 +8,9 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: linear-gradient(270deg, #d9a7a7,#d9d9a7, #a7d9a7,#a7d9d9,#a7a7d9,#d9a7d9,#d9a7a7);
-    background-size: 600vh;
-    animation: background-tv 70s infinite ;
+    background: linear-gradient(270deg, #d9a7d9,#a7a7d9,#a7c1d9,#a7a7d9,#d9a7d9);
+    background-size: 300vw;
+    animation: background-tv 30s infinite ;
 
   }
 
@@ -122,6 +122,11 @@ h1 {
   cursor: pointer;
   user-select: none;
   -webkit-user-select: none;
+  &.demo{
+    margin: 50px auto;
+    width: 220px;
+
+  }
 }
 
 .card_like{
@@ -232,7 +237,51 @@ h1 {
   } 
 }
 
-
+//CANVAS
+.offCanvas{
+  &_background{
+    display: none;
+    &_active{
+      width: 100vw;
+      height: 100vh;
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #00000056;
+      z-index: 1000;
+    }
+  }
+  &_modal{
+  width: 400px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.801);
+  }
+  &_wrapper{
+    margin: 30px 40px 0px 40px;
+    width: auto;
+    position: static;
+    display: flex;
+    flex-direction: column;
+    h1{
+      font-size: 20px;
+    }
+  }
+  &_inputText{
+    width: auto;
+    height: 30px;
+    margin-bottom: 40px;
+  }
+  &_submit{
+    margin: 0 auto;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+  }
+}
 
 @media (prefers-color-scheme: dark) {
   html {
@@ -240,5 +289,7 @@ h1 {
   }
   body {
     color: white;
+    // background: linear-gradient(270deg, #d9a7d9,#a7a7d9,#a7d9d9,#d9a7d9);
+    // background-size: 400vh;
   }
 }

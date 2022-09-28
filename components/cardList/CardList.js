@@ -1,7 +1,8 @@
 //libraries
 
 //mine
-import { useGetCardsQuery } from "../../store/fetchQuerySlice";
+import { useCallback } from "react";
+import { useDeleteCardMutation, useGetCardsQuery } from "../../store/fetchQuerySlice";
 
 //components
 import CardCreate from "./CardCreate.js"
@@ -17,6 +18,13 @@ const CardList = () => {
         error
     } = useGetCardsQuery()
 
+    const [deleteCard] = useDeleteCardMutation()
+
+    const onDelete = useCallback((id) => {
+        deleteCard(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
+
     if (isLoading){
         return <h1>Карточки загружаются</h1>
     } else if (isError){
@@ -31,7 +39,7 @@ const CardList = () => {
         }
         return arr.map(({id, ...props}) => {
             return (
-                <CardListItem key={id} {...props}/>
+                <CardListItem key={id} {...props} onDelete={()=> onDelete(id)}/>
             )
         })
     }
