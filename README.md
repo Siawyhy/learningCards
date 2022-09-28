@@ -1,4 +1,5 @@
-# This is a [Next.js](https://nextjs.org/) 
+# [VIDEO](https://youtu.be/ZxfvwXSYjso) 
+Как выглядит приложение v0.4 (полосы только на видео)
 
 not my first project, but my first in next.js
 
@@ -17,3 +18,4 @@ ____
 - v0.3.0 - Redux/toolkit (Slice)
 - v0.3.1 - Small edits to the design [NEW](https://imgur.com/jrGwroG) ([old](https://imgur.com/Vem9TFX))
 - v0.3.2 - RTK Query (remove the (cardsSlice)
+- v0.4.0 - CreateRead~Update~Delete [VIDEO (пример работы приложения)](https://youtu.be/ZxfvwXSYjso)
