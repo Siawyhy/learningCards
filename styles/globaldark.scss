@@ -8,10 +8,11 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: linear-gradient(270deg, #d9a7d9,#a7a7d9,#a7c1d9,#a7a7d9,#d9a7d9);
-    background-size: 300vw;
-    animation: background-tv 30s infinite ;
-
+    background: #b6a7d9;
+    //background: linear-gradient(90deg,#d9a7d9,#a7a7d9,#a7c1d9,#a7a7d9,#d9a7d9);
+    background-size: 100vw;
+    // animation: background-tv 30s infinite ;
+    color: white;
   }
 
   @keyframes background-tv {
@@ -283,13 +284,11 @@ h1 {
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    // background: linear-gradient(270deg, #d9a7d9,#a7a7d9,#a7d9d9,#d9a7d9);
-    // background-size: 400vh;
-  }
-}
+// @media (prefers-color-scheme: dark) {
+//   html {
+//     color-scheme: dark;
+//   }
+//   body {
+//     color: white;
+//   }
+// }

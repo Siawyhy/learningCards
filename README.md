@@ -19,3 +19,4 @@ ____
 - v0.3.1 - Small edits to the design [NEW](https://imgur.com/jrGwroG) ([old](https://imgur.com/Vem9TFX))
 - v0.3.2 - RTK Query (remove the (cardsSlice)
 - v0.4.0 - CreateRead~Update~Delete [VIDEO (пример работы приложения)](https://youtu.be/ZxfvwXSYjso)
+- v0.4.1 - added: PATCH method 

@@ -2,7 +2,7 @@
 
 //mine
 import { useCallback } from "react";
-import { useDeleteCardMutation, useGetCardsQuery } from "../../store/fetchQuerySlice";
+import { useChangeCardMutation, useDeleteCardMutation, useGetCardsQuery } from "../../store/fetchQuerySlice";
 
 //components
 import CardCreate from "./CardCreate.js"
@@ -10,7 +10,6 @@ import CardListItem from "./CardListItem"
 
 
 const CardList = () => {
-
     const {
         data: cards = [],
         isLoading,
@@ -22,6 +21,14 @@ const CardList = () => {
 
     const onDelete = useCallback((id) => {
         deleteCard(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
+    
+    const [setCard] = useChangeCardMutation();
+
+    const onLikeCard = useCallback((id, {like}) => {
+        like = (like) ? false : true
+        setCard({id, like});
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
@@ -39,7 +46,7 @@ const CardList = () => {
         }
         return arr.map(({id, ...props}) => {
             return (
-                <CardListItem key={id} {...props} onDelete={()=> onDelete(id)}/>
+                <CardListItem key={id} {...props} onDelete={()=> onDelete(id)} onLikeCard={()=> onLikeCard(id, {...props})}/>
             )
         })
     }

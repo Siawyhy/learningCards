@@ -1,12 +1,12 @@
 import { useId, useState } from "react"
 import { useAddCardMutation } from "../../store/fetchQuerySlice";
 
-
 const OffConvas = ({active, setActive}) => {
     const [nameEn, setNameEn] = useState ("");
     const [nameRu, setNameRu] = useState ("");
     const [name, setName] = useState ("Example");
     const [createCard, {isError}] = useAddCardMutation();
+
 
     const onSubmitCreate = (e) => {
         e.preventDefault();
@@ -29,15 +29,17 @@ const OffConvas = ({active, setActive}) => {
             <div className="offCanvas_modal" onClick = {e => e.stopPropagation()}>
                 <form onSubmit={onSubmitCreate}>
                     <div className="offCanvas_wrapper">
-                        <h1>the word in English</h1>
+                        <h1>The word in English</h1>
                         <input required type="text" 
                             name="en_name" 
                             className="offCanvas_inputText" 
                             id="en" 
                             placeholder="In English"
                             value={nameEn}
-                            onChange={(e) => {  setNameEn(e.target.value);
-                                                setName(e.target.value);}}
+                            autoComplete="off"
+                            onChange={(e) => {
+                                setNameEn(e.target.value);
+                                setName(e.target.value)}}
                             />
                         <h1>Слово на Русском</h1>
                         <input required type="text" 
@@ -45,8 +47,10 @@ const OffConvas = ({active, setActive}) => {
                             className="offCanvas_inputText" 
                             id="ru" 
                             placeholder="По-русски"
+                            autoComplete="off"
                             value={nameRu}
-                            onChange={(e) => {  setNameRu(e.target.value);
+                            onChange={(e) => {
+                                                setNameRu(e.target.value);
                                                 setName(e.target.value)}}
                             />
                         <button type="submit" className="btn offCanvas_submit">Create</button>

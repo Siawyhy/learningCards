@@ -10,7 +10,7 @@
       "id": 2,
       "en": "Blade",
       "ru": "Меч",
-      "like": true
+      "like": false
     },
     {
       "id": 3,
@@ -28,7 +28,7 @@
       "id": 5,
       "en": "Overload",
       "ru": "Перезагрузка",
-      "like": true
+      "like": false
     },
     {
       "id": 6,
@@ -58,7 +58,7 @@
       "id": 11,
       "en": "Implementation",
       "ru": "Реализация",
-      "like": false
+      "like": true
     },
     {
       "id": 13,
@@ -73,10 +73,10 @@
       "like": false
     },
     {
-      "id": 15,
       "en": "Provide",
       "ru": "Снабжать",
-      "like": false
+      "like": true,
+      "id": 15
     }
   ]
 }
