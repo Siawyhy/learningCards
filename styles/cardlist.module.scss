@@ -1,0 +1,43 @@
+@import './var.scss';
+
+.list{
+    display: grid;
+    grid-template-columns: repeat(4, $width-card);
+    justify-content: space-between;
+    list-style-type: none;
+    padding-left: 0px;
+    gap: 50px 20px;
+    margin-top: 250px;
+    margin-bottom: 200px;
+}
+  
+@media (max-width:1000px) {
+.list{
+    margin: 100px auto;
+    justify-content: space-evenly;
+    grid-template-columns: repeat(3, 220px);
+    gap: 20px 30px;
+    display: grid;
+}}
+
+@media (max-width:750px) {
+.list{
+    margin-top: 30px;
+    grid-template-columns: repeat(3, 200px);
+    gap: 20px 30px;
+}}
+
+@media (max-width:710px) {
+.list{
+    margin-top: 30px;
+    grid-template-columns: repeat(2, 47%);
+    gap: 20px 30px;
+    justify-content: space-between;
+    grid-template-rows: max-content;
+}}
+
+@media (max-width:500px) {
+.list{
+    grid-template-columns: repeat(1, 92%);
+    justify-content: center;   
+}}

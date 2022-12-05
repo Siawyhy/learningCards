@@ -28,7 +28,7 @@
       "id": 5,
       "en": "Overload",
       "ru": "Перезагрузка",
-      "like": false
+      "like": true
     },
     {
       "id": 6,
@@ -58,7 +58,7 @@
       "id": 11,
       "en": "Implementation",
       "ru": "Реализация",
-      "like": true
+      "like": false
     },
     {
       "id": 13,
@@ -75,8 +75,20 @@
     {
       "en": "Provide",
       "ru": "Снабжать",
-      "like": true,
+      "like": false,
       "id": 15
+    },
+    {
+      "en": "XXXXXXXXXXXXXXXXXXXXXXXXX",
+      "ru": "выаываыва",
+      "like": false,
+      "id": 32
+    },
+    {
+      "en": "XXXXXXXXXXXXXXXXXXXX",
+      "ru": "ххххххххххххххххххххххххх",
+      "like": false,
+      "id": 34
     }
   ]
 }

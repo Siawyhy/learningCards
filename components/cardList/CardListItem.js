@@ -1,24 +1,37 @@
-import { useMemo, useState, useCallback } from "react";
+import {useState, useCallback} from "react";
+
 import { useChangeCardMutation } from "../../store/fetchQuerySlice";
 
+import style from '../../styles/card.module.scss'
 
-const CardListItem = ({ru, en, like, onDelete, onLikeCard }) => {
+const CardListItem = ({ru, en, like, onDelete, onLikeCard}) => {
 
     const [name, setName] = useState (en);
-    let statusLike;
+    const [blur, setBlur] = useState ("")
 
     function reName () {
         setName(name => name === en? ru : en)
     }
 
+    const [setCard] = useChangeCardMutation();
+
+    const onEditCard = useCallback((id, {ru, en, like}) => {
+        like = (like) ? false : true
+        setCard({id, ru, en, like});
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
+
     return (
-        <li className="card">
-            <div className="card-body" onClick={() => reName(name)}>
-                <div className={like?'card_like_active':'card_like'} onClick={(e) => {e.stopPropagation(onLikeCard())}}></div>
-                <div className="card-title"><h3 className="card-title-name">{name}</h3></div>
-                <div className="card_button">
-                    <button className="btn card_button_item like" onClick={(e) => console.log(e)}>Edit</button>
-                    <button className="btn card_button_item delete" 
+        <li>
+            <div className={style.body} onPointerEnter={()=>{setBlur(style.active)}} onPointerLeave={()=>{setBlur("")}} >
+                <div className={style.blur_wrapper} onClick={(e) => {e.stopPropagation()}}>
+                    <div className={`${style.blur} ${blur}`}></div>
+                </div>
+                <div className={like? style.like_active : style.like} onClick={(e) => {e.stopPropagation(onLikeCard())}}></div>
+                <div className={style.title} onClick={() => reName(name)}><h3 className={style.title_name}>{name}</h3></div>
+                <div className={style.button}>
+                    <button className={`btn ${style.button_item} ${style.edit}`} onClick={(e) => console.log(e)}>Edit</button>
+                    <button className={`btn ${style.button_item} ${style.delete}`} 
                                                                     onClick={(e) => e.stopPropagation()}
                                                                     onDoubleClick={() => onDelete()}>Delete</button>
                 </div>

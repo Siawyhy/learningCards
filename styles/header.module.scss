@@ -1,7 +1,37 @@
-.wrapper {
-    min-height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+@import './var.scss';
+
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $font-large;
+  padding-top: 30px;
+}
+  
+.nav{
+  display: flex;
+  gap: 50px;
+  color: rgba(255, 255, 255, 0.178);
+  list-style-type: none;
+}
+
+.nav_activ{
+  color:rgb(255, 255, 255)
+}
+
+.nav_item{
+  color:rgba(255, 255, 255, 0.404)
+}
+
+@media (max-width:1000px) {
+  .nav{
+    font-size: 18px;
   }
+}
+
+@media (max-width:750px) {
+  .nav{
+    font-size: 14px;
+  }
+}

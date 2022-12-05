@@ -1,0 +1,50 @@
+.background{
+  display: none;
+  &_active{
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #00000056;
+    z-index: 1000;
+  }
+}
+
+.label {
+    font-size: 18px;
+}
+
+.modal{
+    width: 400px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.801);
+}
+
+.wrapper{
+    margin: 30px 40px 0px 40px;
+    width: auto;
+    position: static;
+    display: flex;
+    flex-direction: column;
+    h1{
+        font-size: 20px;
+    }
+}
+
+.inputText{
+    width: auto;
+    height: 30px;
+    margin-bottom: 40px;
+}
+
+.submit{
+    margin: 0 auto;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+}

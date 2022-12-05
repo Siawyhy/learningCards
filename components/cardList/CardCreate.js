@@ -1,5 +1,9 @@
 import { useState } from "react";
-import OffConvas from "./OffCanvasCreate";
+
+import OffConvas from "../form/OffCanvasCreate";
+import CardListItem from "../cardList/CardListItem"
+
+import style from '../../styles/card.module.scss'
 
 const CardCreate = () => {
 
@@ -7,9 +11,9 @@ const CardCreate = () => {
 
     return (
         <>
-            <li className="card">
-                <div className="card-body" onClick={() => setOffCanvasActive(true)}>
-                    <div className="card-title"><h3 className="card-title-create ">+</h3></div>
+            <li className={style.card}>
+                <div className={style.body} onClick={() => setOffCanvasActive(true)}>
+                    <div className={style.title}><h3 className={style.title_name}>+</h3></div>
                 </div>
             </li>
             <OffConvas active={offCanvasActive} setActive={setOffCanvasActive}/>

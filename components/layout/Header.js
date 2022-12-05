@@ -2,10 +2,12 @@ import Link from "next/link"
 //import Image from "next/image"
 import { useRouter } from "next/router"
 
+import styles from "../../styles/header.module.scss"
+
 const navBar = [
     {id:1, tittle: "My words", path: '/'},
     {id:2, tittle:"Categories", path:'/categories'},
-    {id:3, tittle:"About us", path:'/dev'},
+    {id:3, tittle:"About us", path:'/about'},
 ];
 
 const Header = () => {
@@ -13,18 +15,18 @@ const Header = () => {
 
     return(
         <>
-        <header className="header">
-            <h1 className='.header_title'>
+        <header className={styles.header}>
+            <h1>
             <Link key={1} href="/">
-                <span>Start Learning</span>
+                <span><h1>Start Learning</h1></span>
             </Link>
             </h1>
             <nav >
-                <ul className='header_nav'>
+                <ul className={styles.nav}>
                     {navBar.map(({id, tittle, path}) => (
                         <Link key={id} href={path}>
                             <li>
-                                <a className={pathname === path ? "header_nav_activ" : "header_nav_item"}>{tittle}</a>
+                                <a className={pathname === path ? styles.nav_activ : styles.nav_item} href={path}>{tittle}</a>
                             </li>
                         </Link>
                     ))}

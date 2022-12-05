@@ -8,6 +8,8 @@ import { useChangeCardMutation, useDeleteCardMutation, useGetCardsQuery } from "
 import CardCreate from "./CardCreate.js"
 import CardListItem from "./CardListItem"
 
+//styles
+import styles from '../../styles/cardlist.module.scss'
 
 const CardList = () => {
     const {
@@ -33,28 +35,29 @@ const CardList = () => {
     },[])
 
     if (isLoading){
-        return <h1>Карточки загружаются</h1>
+        return <h2>Карточки загружаются</h2>
     } else if (isError){
-        return <><h1>Ошибка загрузки</h1><p>{error.status}</p></>
+        return <><h2>Ошибка загрузки</h2><p>{error.status}</p></>
     }
 
     const renderCardList = (arr) => {
         if (arr.length === 0) {
             return (
-                <h1>Добавьте карточку</h1>
+                <h2>Добавьте карточку</h2>
             )
         }
         return arr.map(({id, ...props}) => {
             return (
-                <CardListItem key={id} {...props} onDelete={()=> onDelete(id)} onLikeCard={()=> onLikeCard(id, {...props})}/>
+                <CardListItem key={id} {...props}  
+                    onDelete={()=> onDelete(id)} 
+                    onLikeCard={()=> onLikeCard(id, {...props})}/>
             )
         })
     }
     const elements = renderCardList(cards);
 
-    return (
-        
-        <ul className="card_list">
+    return (   
+        <ul className={styles.list}>
             {elements}
             <CardCreate/>
         </ul>
